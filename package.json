@@ -9,5 +9,8 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/sasaplus1-prototype/load-image.js.git"
+  },
+  "dependencies": {
+    "once": "github:sasaplus1-prototype/once.js"
   }
 }
