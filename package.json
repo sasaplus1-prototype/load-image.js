@@ -1,0 +1,16 @@
+{
+  "name": "load-image",
+  "version": "0.1.0",
+  "author": "sasa+1 <sasaplus1@gmail.com>",
+  "description": "load image",
+  "main": "./index.js",
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sasaplus1-prototype/load-image.js.git"
+  },
+  "dependencies": {
+    "once": "github:sasaplus1-prototype/once.js"
+  }
+}
