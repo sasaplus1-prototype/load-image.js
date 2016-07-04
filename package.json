@@ -12,5 +12,8 @@
   },
   "dependencies": {
     "once": "github:sasaplus1-prototype/once.js"
+  },
+  "devDependencies": {
+    "webpack": "^1.13.1"
   }
 }
