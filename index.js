@@ -1,8 +1,3 @@
-/*!
- * @license load-image.js Copyright(c) 2016 sasa+1
- * https://github.com/sasaplus1-prototype/load-image.js
- * Released under the MIT license.
- */
 'use strict';
 
 var once = require('once');
