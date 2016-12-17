@@ -17,7 +17,7 @@ function load(src, callback) {
   };
   image.src = src;
 
-  if (image.naturalWidth) {
+  if (image.naturalWidth || image.complete) {
     callback(null, image);
   }
 }
