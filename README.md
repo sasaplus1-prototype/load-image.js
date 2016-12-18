@@ -48,6 +48,12 @@ loadImage('path/to/image')
   });
 ```
 
+if you want to use Promise polyfill:
+
+```js
+loadImage.Promise = require('bluebird');
+```
+
 ## Functions
 
 ### loadImage(src[, callback])
