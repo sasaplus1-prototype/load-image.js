@@ -1,9 +1,17 @@
 'use strict';
 
-var once = require('once');
+const isFunction = require('type-check/is-function');
 
+const once = require('once');
+
+/**
+ * callback when image loaded
+ *
+ * @param {String} src
+ * @param {Function} callback
+ */
 function load(src, callback) {
-  var image = new Image();
+  const image = new Image();
 
   image.onabort = function(event) {
     callback(new Error('onabort'), event);
@@ -22,14 +30,24 @@ function load(src, callback) {
   }
 }
 
-module.exports = function(src, callback) {
-  if (typeof callback === 'function') {
+/**
+ * load image
+ *
+ * @param {String} src
+ * @param {Function} [callback]
+ * @return {Promise}
+ */
+function loadImage(src, callback) {
+  if (isFunction(callback)) {
     load(src, once(callback));
   } else {
-    return new Promise(function(resolve, reject) {
-      load(src, function(err, image) {
-        (err) ? reject(err) : resolve(image);
-      });
+    return new loadImage.Promise(function(resolve, reject) {
+      load(src, (err, image) => (err) ? reject(err) : resolve(image));
     });
   }
 };
+
+// NOTE: get global object by any environment
+loadImage.Promise = Function('return this')().Promise;
+
+module.exports = loadImage;

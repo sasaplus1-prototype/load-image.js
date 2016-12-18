@@ -4,7 +4,8 @@
   "version": "0.1.1",
   "author": "sasa+1 <sasaplus1@gmail.com>",
   "dependencies": {
-    "once": "github:sasaplus1-prototype/once.js"
+    "once": "github:sasaplus1-prototype/once.js",
+    "type-check": "github:sasaplus1-prototype/type-check.js"
   },
   "devDependencies": {
     "babel-core": "^6.20.0",
