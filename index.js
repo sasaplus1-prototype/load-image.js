@@ -47,7 +47,7 @@ function loadImage(src, callback) {
       });
     });
   }
-};
+}
 
 // NOTE: get global object by any environment
 loadImage.Promise = Function('return this')().Promise;
