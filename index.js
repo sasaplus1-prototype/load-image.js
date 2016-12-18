@@ -1,8 +1,8 @@
 'use strict';
 
-const isFunction = require('type-check/is-function');
+var isFunction = require('type-check/is-function');
 
-const once = require('once');
+var once = require('once');
 
 /**
  * callback when image loaded
@@ -11,7 +11,7 @@ const once = require('once');
  * @param {Function} callback
  */
 function load(src, callback) {
-  const image = new Image();
+  var image = new Image();
 
   image.onabort = function(event) {
     callback(new Error('onabort'), event);
@@ -42,7 +42,9 @@ function loadImage(src, callback) {
     load(src, once(callback));
   } else {
     return new loadImage.Promise(function(resolve, reject) {
-      load(src, (err, image) => (err) ? reject(err) : resolve(image));
+      load(src, function(err, image) {
+        (err) ? reject(err) : resolve(image);
+      });
     });
   }
 };
