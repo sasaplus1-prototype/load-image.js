@@ -59,7 +59,7 @@ loadImage('path/to/image')
 - `[return]`
   - `Promise`
 
-load to image of `src`. return `Promise` if callback is not passed.
+load image of `src`. return `Promise` if callback is not passed.
 
 ## License
 
